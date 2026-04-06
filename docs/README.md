@@ -1,5 +1,8 @@
 # Nautilus Data Documentation
 
+> **Last Updated**: 2026-04-06T17:20:03Z  \
+> **Git Hash**: `4103348`
+
 **Version**: 0.18.0
 **License**: LGPL-3.0
 **Python**: 3.13+
