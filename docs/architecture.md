@@ -1,3 +1,5 @@
+> Historical documentation: upstream retired this package in May 2026. These APIs and installation commands are preserved as historical context. For the current repository, see [the maintenance guide](ayu-develop.md) and [upstream retirement notice](../README.md).
+
 # Architecture
 
 ## System Design

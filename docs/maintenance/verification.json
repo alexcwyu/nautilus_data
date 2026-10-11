@@ -1,0 +1,15 @@
+{
+  "repository": "nautilus_data",
+  "source_commit_before_documentation_commit": "daa84efb686cc1ed3c431cd2e62d7512961c3e62",
+  "recorded_on": "2026-10-12",
+  "records": [],
+  "summary": {
+    "repo": "nautilus_data",
+    "branch": "feature/ayu_develop",
+    "status": "Retired upstream repository synchronized; compilation and tests are not applicable.",
+    "runtime": null,
+    "tests": "No current package or tests: upstream deleted the Python project and retained its retirement README.",
+    "notes": "The main NautilusTrader testkit/catalog workflow replaces this repository. Historical documentation is labeled and retained for reference; no empty Python project was invented."
+  },
+  "note": "Full raw logs are retained in the workspace maintenance evidence, not distributed here. Hashes identify those original logs. A successful build or selected test subset does not imply a full test-suite pass. Commands containing <workspace> describe the original execution environment."
+}

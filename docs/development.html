@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>nautilus_data: development workflow and layout</title><style>
+:root{color-scheme:light dark;--bg:#f6f8fa;--paper:#fff;--fg:#182332;--muted:#526274;--line:#d9e0e7;--accent:#1769aa}
+@media(prefers-color-scheme:dark){:root{--bg:#111820;--paper:#192330;--fg:#e6edf3;--muted:#a0b3c5;--line:#344354;--accent:#71b7ee}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.7 system-ui,-apple-system,sans-serif}
+header{border-bottom:1px solid var(--line);padding:16px max(24px,calc((100vw - 1120px)/2));background:var(--paper);font-size:14px}
+main{max-width:1120px;margin:32px auto;padding:40px 48px;background:var(--paper);border:1px solid var(--line);border-radius:12px}
+h1,h2,h3,h4{line-height:1.3;scroll-margin-top:24px}h1{font-size:2.1rem}h2{margin-top:2.5em;border-bottom:1px solid var(--line);padding-bottom:.35em}h3{margin-top:1.8em}
+a{color:var(--accent);text-underline-offset:3px}code{font:14px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--bg);border-radius:4px;padding:2px 5px}pre{overflow:auto;border:1px solid var(--line);background:var(--bg);padding:16px;border-radius:7px}pre code{padding:0;background:none}
+table{border-collapse:collapse;width:100%;display:block;overflow-x:auto;font-size:14px}th,td{border:1px solid var(--line);padding:9px 12px;text-align:left}th{background:var(--bg)}blockquote{border-left:4px solid var(--accent);margin:16px 0;padding:4px 20px;color:var(--muted)}
+.diagram{overflow-x:auto;margin:24px 0;padding:20px;border:1px solid var(--line);border-radius:8px;background:#fff;color:#182332}.mermaid{border:0;background:none;text-align:center}.mermaid svg{height:auto;max-width:100%}details{font-size:13px;color:#526274}.headerlink{margin-left:.4em;font-size:.7em;text-decoration:none;color:var(--muted)}
+main{min-width:0;overflow-wrap:anywhere}table,pre{max-width:100%}.diagram svg{display:block}
+th,td{min-width:120px;overflow-wrap:normal}
+@media(max-width:740px){main{margin:0;padding:24px 18px;border:0;border-radius:0}h1{font-size:1.7rem}.diagram{padding:8px}}
+@media print{header,details,.headerlink{display:none}body,main{background:#fff;color:#000;border:0;margin:0;padding:0}a{color:#000}.diagram,pre{break-inside:avoid}}
+</style></head><body><header>Engineering documentation · <a href="development.md">Markdown source</a></header><main><h1 id="nautilus_data-development-workflow-and-layout">nautilus_data: development workflow and layout<a class="headerlink" href="#nautilus_data-development-workflow-and-layout" title="Permanent link">&para;</a></h1>
+<p>Use branch <code>feature/ayu_develop</code>. The actual upstream default branch and all fetched branch/tag identities are recorded in the maintenance sync evidence. Merge existing work; do not reset divergent branches or replace conflicting tags.</p>
+<h2 id="source-synchronization">Source synchronization<a class="headerlink" href="#source-synchronization" title="Permanent link">&para;</a></h2>
+<pre><code class="language-sh">git fetch origin
+git fetch upstream
+git switch feature/ayu_develop
+git merge origin/feature/ayu_develop
+# Merge the actual default branch documented in the sync result.
+</code></pre>
+<p>This maintenance used namespaced remote tags before comparing tag identities. Missing upstream tags/branches were pushed to the fork; divergent branches were merged when conflict-free, and conflicting identities were retained for explicit reconciliation. The feature branch contains the default branch plus the maintenance changes. Source snapshot and architecture are documented in <a href="ayu-develop.md">ayu-develop.md</a>.</p>
+<h2 id="repository-layout">Repository layout<a class="headerlink" href="#repository-layout" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>docs/ayu-develop.md</code> and <code>docs/ayu-develop.html</code>: engineering guide with architecture, workflow, class and sequence diagrams and implementation links.</li>
+<li><code>docs/development.md</code>: toolchain, layout and contributor workflow.</li>
+<li><code>docs/validation.md</code>: exact executed commands, outcomes and limitations.</li>
+</ul>
+<h2 id="retired-repository">Retired repository<a class="headerlink" href="#retired-repository" title="Permanent link">&para;</a></h2>
+<p>Upstream decommissioned this repository in May2026. The maintenance branch follows the README-only default and does not reintroduce the deleted Python package or uv project. Compilation and package tests are not applicable. Use the main NautilusTrader repository's current testkit/catalog data workflow. Historical docs that mention the retired package do not describe the current branch's API.</p>
+<h2 id="verification-and-documentation">Verification and documentation<a class="headerlink" href="#verification-and-documentation" title="Permanent link">&para;</a></h2>
+<p>Use the commands and results in <a href="validation.md">validation.md</a>. Markdown is the editable source of the guide; HTML embeds rendered SVG diagrams for offline browsing. Keep actual source links valid after moving modules. Preserve existing cases/assertions while correcting incompatible APIs, genuine resource leaks or invalid fixtures. No additional test cases were requested or added.</p>
+<h2 id="historical-reference">Historical reference<a class="headerlink" href="#historical-reference" title="Permanent link">&para;</a></h2>
+<p>The <a href="archive/development-before-maintenance.md">previous development guide</a> is retained for source history. Its retired APIs and earlier toolchains are not the current branch instructions.</p></main>
+</body></html>
