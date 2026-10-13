@@ -1,5 +1,11 @@
 # nautilus_data: development workflow and layout
 
+<!-- current-documentation-provenance -->
+Documentation reviewed: 2026-10-13 · Git source base: `30ffd0ff456a5be8e3d1d3f97ac5b9f33aa0ca47` · [Current architecture and feature guide](ayu-develop.md).
+Historical execution commands/results below retain their original dates and scope; this metadata update is not a new application test run.
+<!-- /current-documentation-provenance -->
+
+
 Use branch `feature/ayu_develop`. The actual upstream default branch and all fetched branch/tag identities are recorded in the maintenance sync evidence. Merge existing work; do not reset divergent branches or replace conflicting tags.
 
 ## Source synchronization
